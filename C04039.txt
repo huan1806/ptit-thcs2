@@ -1,0 +1,13 @@
+Let left and right be the start value and end value corresponding.
+Obviously, distance = right - left
+In the most favorable circumstance, the length steps are 1, 2, ..., n - 1, n, n - 1, ..., 2, 1, with a total of (2n - 1) steps.
+Therefore, to ensure that the numbers of steps is minimum, we have to determine the maximum value of n.
+Let N is the maximum value of n, it must satisfy:
+	1 + 2 + ... + (N - 1) + N + (N -1) + ... + 1 <= distance
+    <=> N*N <= distance
+     => N = floor(sqrt(distance))
+=> remaining distance = distance - N * N
+There will be 3 cases of remaining distance:
+    - Case: remaining distance = 0 => nothing left => total steps = 2 * N  - 1;
+    - Case: remaining distance = N => the next step with length N, after nth step => total steps = 2 * N;
+    - Case: remaining distance > N => the next step with length N, after nth step + another step with length (remaining distance - N) => total steps = 2 * N + 1;

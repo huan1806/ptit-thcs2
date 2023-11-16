@@ -1,0 +1,4 @@
+Find the largest character from position 0 to the end of the string, the number of occurrences,
+and its last index (last_index).
+Continue to find the largest character from position last_index + 1 to the end of the string.
+Repeat the operation until the end of the string.
